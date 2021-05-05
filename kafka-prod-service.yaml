@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: spring
+  name: spring-producer-service
+  namespace: default
+spec:
+  ports:
+  - port: 8087
+    protocol: TCP
+    targetPort: 8087
+  selector:
+    app: spring
+  type: LoadBalancer
